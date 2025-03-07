@@ -14,6 +14,7 @@ What does the script provide?
 
 **INSTALLATION**
 - Extract the file and put it somewhere in your server folder.
+- Remove '-main' from folder name
 - Ensure Hot-blueprints in your server.cfg.
 - Run sql file provided.
 - Configure the script to your liking through the config file.
