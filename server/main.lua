@@ -1,4 +1,4 @@
-RegisterNetEvent('nm-blueprints:receiveBlueprint', function(citizenId, blueprint)
+RegisterNetEvent('hot-blueprints:receiveBlueprint', function(citizenId, blueprint)
     local src = source
     
     if alreadyLearned(citizenId, blueprint) then

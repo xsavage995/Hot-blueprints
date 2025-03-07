@@ -78,7 +78,7 @@ function openBlueprintMenu()
                 header = reward.label,
                 txt = reward.description,
                 params = {
-                    event = "nm-blueprints:client:giveBlueprint",
+                    event = "hot-blueprints:client:giveBlueprint",
                     args = { index = i }
                 }
             })
@@ -106,7 +106,7 @@ function openBlueprintMenu()
         table.insert(options, {
             title = reward.label,
             description = reward.description,
-            event = "nm-blueprints:client:giveBlueprint",
+            event = "hot-blueprints:client:giveBlueprint",
             args = { index = i }
         })
     end
@@ -127,13 +127,13 @@ function openBlueprintMenu()
     end
 end
 
-RegisterNetEvent('nm-blueprints:client:giveBlueprint', function(data)
+RegisterNetEvent('hot-blueprints:client:giveBlueprint', function(data)
     local index = data.index
     local player = QBCore.Functions.GetPlayerData().citizenid
     local reward = Config.Rewards[index]
     local requiredSkill = exports["cw-rep"]:getCurrentSkill(reward.skillName)
     if requiredSkill >= reward.skillRequired then
-        TriggerServerEvent('nm-blueprints:receiveBlueprint', player, reward.blueprint)
+        TriggerServerEvent('hot-blueprints:receiveBlueprint', player, reward.blueprint)
     else
         QBCore.Functions.Notify('You do not have the required skill to redeem this blueprint', 'error')
     end
